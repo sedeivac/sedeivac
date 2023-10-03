@@ -1,10 +1,10 @@
 # Paolo Caviedes Saavedra
-##WHO I AM
+## WHO I AM
 
-##SUMMARY
+## SUMMARY
 
-##EXPERIENCE
+## EXPERIENCE
 
-##SKILLS
+## SKILLS
 
-##EDUCATION
+## EDUCATION
