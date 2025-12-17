@@ -13,7 +13,7 @@ import sys
 from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple, Union
+from typing import Any, Dict, List, Optional
 import statistics
 import math
 
@@ -190,7 +190,7 @@ class DataQualityAnalyzer:
         date_patterns = [
             r'^\d{4}-\d{2}-\d{2}$',  # YYYY-MM-DD
             r'^\d{2}/\d{2}/\d{4}$',  # MM/DD/YYYY
-            r'^\d{2}-\d{2}-\d{4}$',  # DD-MM-YYYY
+            r'^\d{2}-\d{2}-\d{4}$',  # MM-DD-YYYY or DD-MM-YYYY
             r'^\d{4}/\d{2}/\d{2}$',  # YYYY/MM/DD
         ]
         return any(re.match(pattern, str(value)) for pattern in date_patterns)
@@ -652,7 +652,7 @@ class DataQualityAnalyzer:
                 )
         
         # General recommendations
-        if not any('PRIMARY KEY' in str(rule) for rule in self._get_structure_info().get('possible_keys', [])):
+        if not self._identify_keys():
             recommendations.append(
                 "Add a primary key or unique identifier column to ensure data integrity"
             )
