@@ -1,0 +1,154 @@
+{
+  "data_source": "sample_data.csv",
+  "analysis_date": "2025-12-17T11:49:20.805366",
+  "structure": {
+    "columns": [
+      "customer_id",
+      "email",
+      "age",
+      "signup_date",
+      "status",
+      "total_purchases"
+    ],
+    "column_types": {
+      "customer_id": "INT",
+      "email": "EMAIL",
+      "age": "INT",
+      "signup_date": "DATE",
+      "status": "VARCHAR",
+      "total_purchases": "DECIMAL"
+    },
+    "column_max_lengths": {
+      "status": 8
+    },
+    "possible_keys": [
+      "customer_id"
+    ],
+    "total_rows": 100
+  },
+  "quality_metrics": {
+    "customer_id": {
+      "total_values": 100,
+      "null_count": 0,
+      "empty_count": 0,
+      "null_percentage": 0.0,
+      "unique_count": 100,
+      "duplicate_percentage": 0.0,
+      "distribution": {
+        "min": 1.0,
+        "max": 100.0,
+        "mean": 50.5,
+        "median": 50.5,
+        "stdev": 29.011491975882016,
+        "count": 100
+      },
+      "outliers": [],
+      "format_issues": []
+    },
+    "email": {
+      "total_values": 100,
+      "null_count": 0,
+      "empty_count": 1,
+      "null_percentage": 1.0,
+      "unique_count": 99,
+      "duplicate_percentage": 0.0,
+      "distribution": {},
+      "outliers": [],
+      "format_issues": [
+        {
+          "issue": "Invalid email formats",
+          "count": 2,
+          "examples": [
+            "invalid.email",
+            "karen.white@"
+          ]
+        }
+      ]
+    },
+    "age": {
+      "total_values": 100,
+      "null_count": 0,
+      "empty_count": 0,
+      "null_percentage": 0.0,
+      "unique_count": 30,
+      "duplicate_percentage": 70.0,
+      "distribution": {
+        "min": 25.0,
+        "max": 55.0,
+        "mean": 37.65,
+        "median": 37.0,
+        "stdev": 7.786773297318883,
+        "count": 100
+      },
+      "outliers": [],
+      "format_issues": []
+    },
+    "signup_date": {
+      "total_values": 100,
+      "null_count": 0,
+      "empty_count": 1,
+      "null_percentage": 1.0,
+      "unique_count": 76,
+      "duplicate_percentage": 23.232323232323232,
+      "distribution": {
+        "min_date": "2023-01-10",
+        "max_date": "2023-04-10",
+        "count": 98,
+        "range_days": 90
+      },
+      "outliers": [],
+      "format_issues": [
+        {
+          "issue": "Inconsistent date formats",
+          "details": "Found formats: {'YYYY-MM-DD': 97, 'DD-MM-YYYY': 1}"
+        }
+      ]
+    },
+    "status": {
+      "total_values": 100,
+      "null_count": 0,
+      "empty_count": 0,
+      "null_percentage": 0.0,
+      "unique_count": 3,
+      "duplicate_percentage": 97.0,
+      "distribution": {
+        "unique_categories": 3,
+        "top_categories": {
+          "active": 61,
+          "inactive": 20,
+          "pending": 19
+        },
+        "total_count": 100
+      },
+      "outliers": [],
+      "format_issues": []
+    },
+    "total_purchases": {
+      "total_values": 100,
+      "null_count": 0,
+      "empty_count": 0,
+      "null_percentage": 0.0,
+      "unique_count": 69,
+      "duplicate_percentage": 31.0,
+      "distribution": {
+        "min": 0.0,
+        "max": 3200.0,
+        "mean": 1414.6425,
+        "median": 1500.0,
+        "stdev": 917.3903144018544,
+        "count": 100
+      },
+      "outliers": [],
+      "format_issues": []
+    }
+  },
+  "quality_scores": {
+    "customer_id": 5.0,
+    "email": 4.5,
+    "age": 5.0,
+    "signup_date": 4.5,
+    "status": 5.0,
+    "total_purchases": 5.0
+  },
+  "overall_score": 4.833333333333333
+}
