@@ -1,0 +1,5 @@
+# Data Quality Analysis Tool Requirements
+# Python 3.7+
+
+# Core dependencies (using only standard library)
+# No external dependencies required - all functionality uses Python standard library
